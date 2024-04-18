@@ -1,47 +1,37 @@
+// interface with structure
+
 using System;
 
-interface IEmployee
+interface Hello
 {
-    string Name
-    {
-        get;
-        set;
-    }
-
-    int Counter
-    {
-        get;
-    }
+    void Fun();
+    void Gun();
+    void Sun();
 }
 
-public class Employee : IEmployee
+struct Bye : Hello
 {
-    //public static int numberOfEmployees;
-
-    private string _name = "Pranav";
-    public string Name  // read-write instance property
+    public void Fun()
     {
-        get => _name;
-        set => _name = value;
+        Console.WriteLine("INside Fun");
     }
-
-    private int _counter = 11;
-    public int Counter  // read-only instance property
+    public void Gun()
     {
-        get => _counter;
+        Console.WriteLine("INside Gun");
     }
-
-    // constructor
-    //public Employee() => _counter = ++numberOfEmployees;
+    public void Sun()
+    {
+        Console.WriteLine("INside Sun");
+    }
 }
 
 class MainClass
 {
     public static void Main(string[] args)
     {
-        Employee obj = new Employee();
-        
-        Console.WriteLine(obj.Counter);
-        Console.WriteLine(obj.Name);
+        Bye obj = new Bye();
+        obj.Fun();
+        obj.Sun();
+        obj.Gun();
     }
 }

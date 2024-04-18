@@ -1,45 +1,27 @@
+// interface with class
+
 using System;
 
-interface Shape
+interface Hello
 {
-    string type 
-    {
-        get; 
-        set;
-    }
-
-    void Draw();
+    void Fun();
+    void Gun();
+    void Sun();
 }
 
-class Circle : Shape
+class Bye : Hello
 {
-    private string _name = "Circle";
-
-    public string type  
+    public void Fun()
     {
-        get => _name;
-        set => _name = value;
+        Console.WriteLine("INside Fun");
     }
-
-    public void Draw()
+    public void Gun()
     {
-        Console.WriteLine("Inside Circle...");
+        Console.WriteLine("INside Gun");
     }
-}
-
-class Rectangle : Shape
-{
-    private string _name = "Rectangle";
-
-    public string type
+    public void Sun()
     {
-        get => _name;
-        set => _name = value;
-    }
-
-    public void Draw()
-    {
-        Console.WriteLine("Inside Rectangle...");
+        Console.WriteLine("INside Sun");
     }
 }
 
@@ -47,13 +29,9 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        Circle cobj = new Circle();
-        Rectangle robj = new Rectangle();
-
-        cobj.Draw();
-        robj.Draw();
-
-        Console.WriteLine(cobj.type);
-        Console.WriteLine(robj.type);
+        Bye obj = new Bye();
+        obj.Fun();
+        obj.Sun();
+        obj.Gun();
     }
 }

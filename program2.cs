@@ -1,35 +1,41 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
- 
-namespace Program
+
+class Arithmetic
 {
-    class Program
+    public int No1;
+    public int No2;
+
+    public Arithmetic(int no1, int no2)
     {
-        static void Main(string[] args)
-        {
-            int number,sum=0,n;
-            Console.Write("enter the Number");
-            number = int.Parse(Console.ReadLine());
-            n = number;
-            for (int i = 1; i < number;i++)
-            {
-                if (number % i == 0)
-                {
-                    sum=sum + i;
-                }
-            }
-                if (sum == n)
-                {
-                    Console.WriteLine("\n Entered number is a perfect number");
-                    Console.ReadLine();
-                }
-                else
-                {
-                    Console.WriteLine("\n Entered number is not a perfect number");
-                    Console.ReadLine();
-                }
-            }
-      }
+        this.No1 = no1;
+        this.No2 = no2;
+    }
+
+    public int Addition()
+    {
+        int Ans = 0;
+        Ans = this.No1 + this.No2;
+        return Ans;
+    }
+}
+
+class program2
+{
+    public static void Main(string[] args)
+    {
+        int iValue1 = 0;
+        int iValue2 = 0;
+        int iRet = 0;
+
+        Console.WriteLine("Enter first number");
+        iValue1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Enter second number");
+        iValue2 = int.Parse(Console.ReadLine());
+
+        Arithmetic obj = new Arithmetic(iValue1,iValue2);
+        iRet = obj.Addition();
+
+        Console.WriteLine("Addition is : "+iRet);
+    }
 }
